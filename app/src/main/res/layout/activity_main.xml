@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/font1"
+        android:text="@string/cu_c_ua_ki_thu"
+        android:textColor="#FB021F"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/i1"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+
+    <ImageView
+        android:id="@+id/i1"
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/conbang"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:visibility="invisible"
+        android:id="@+id/p1"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:src="@drawable/pl2"
+app:layout_constraintLeft_toRightOf="@+id/i1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="15dp"
+        />
+
+    <CheckBox
+        android:id="@+id/b1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/b2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+
+    <CheckBox
+
+        android:id="@+id/b2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/b3"
+        app:layout_constraintLeft_toLeftOf="@+id/b1"
+        app:layout_constraintTop_toBottomOf="@+id/b1"
+
+        />
+
+    <CheckBox
+        android:id="@+id/b3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        />
+
+    <SeekBar
+        android:id="@+id/s1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:thumb="@drawable/tiger"
+        android:progressTint="#518EF6"
+        app:layout_constraintBottom_toBottomOf="@+id/b1"
+        app:layout_constraintLeft_toRightOf="@+id/b1"
+        app:layout_constraintTop_toTopOf="@+id/b1"
+
+        />
+
+    <SeekBar
+        android:id="@+id/s2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:thumb="@drawable/animal"
+        android:progressTint="#518EF6"
+        app:layout_constraintBottom_toBottomOf="@+id/b2"
+        app:layout_constraintLeft_toRightOf="@+id/b2"
+        app:layout_constraintTop_toTopOf="@+id/b2"
+
+        />
+
+    <SeekBar
+        android:id="@+id/s3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:thumb="@drawable/ckik"
+        android:progressTint="#518EF6"
+        app:layout_constraintBottom_toBottomOf="@+id/b3"
+        app:layout_constraintLeft_toRightOf="@+id/b3"
+        app:layout_constraintTop_toTopOf="@+id/b3"
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
