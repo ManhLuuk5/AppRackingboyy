@@ -14,21 +14,21 @@ class MainActivity : AppCompatActivity() {
     private var binding: ActivityMainBinding? = null
     private var timer: CountDownTimer = object : CountDownTimer(MAX_TIME_RUNNING, STEP_RUNNING) {
         override fun onTick(millisUntilFinished: Long) {
-            binding?.let { result ->
-                result.seekbar1.progress += (0..5).random()
-                result.seekbar2.progress += (0..5).random()
-                result.seekbar3.progress += (0..5).random()
-                result.imAvatar.visibility = View.VISIBLE
-                if (result.seekbar1.progress >= result.seekbar1.max) {
+            binding?.apply {
+                this.seekbar1.progress += (0..5).random()
+                this.seekbar2.progress += (0..5).random()
+                this.seekbar3.progress += (0..5).random()
+                this.imAvatar.visibility = View.VISIBLE
+                if (this.seekbar1.progress >= this.seekbar1.max) {
                     showToastAndCancel("Winner 1")
-                } else if (result.seekbar2.progress >= result.seekbar2.max) {
+                } else if (this.seekbar2.progress >= this.seekbar2.max) {
                     showToastAndCancel("Winner 2")
-                } else if (result.seekbar3.progress >= result.seekbar3.max) {
+                } else if (this.seekbar3.progress >= this.seekbar3.max) {
                     showToastAndCancel("Winner 3")
                 }
-                if (result.cbPlayer2.isEnabled) {
+                if (this.cbPlayer2.isEnabled) {
                     setZeroProgress()
-                } else result.imPlay.visibility = View.INVISIBLE
+                } else this.imPlay.visibility = View.INVISIBLE
             }
         }
 
@@ -52,40 +52,40 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun enableCheckbox(isEnable: Boolean) {
-        binding?.let { result ->
-            result.cbPlayer1.isEnabled = isEnable
-            result.cbPlayer2.isEnabled = isEnable
-            result.cbPlayer3.isEnabled = isEnable
+        binding?.apply {
+            this.cbPlayer1.isEnabled = isEnable
+            this.cbPlayer2.isEnabled = isEnable
+            this.cbPlayer3.isEnabled = isEnable
         }
     }
 
     private fun onCheckedChangeListener() {
-        binding?.let { result ->
-            result.cbPlayer1.setOnCheckedChangeListener { _, isChecked ->
+        binding?.apply {
+            this.cbPlayer1.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) {
-                    result.cbPlayer2.isChecked = false
-                    result.cbPlayer3.isChecked = false
-                    result.imPlay.visibility = View.VISIBLE
+                    this.cbPlayer2.isChecked = false
+                    this.cbPlayer3.isChecked = false
+                    this.imPlay.visibility = View.VISIBLE
                 } else {
-                    result.imPlay.visibility = View.INVISIBLE
+                    this.imPlay.visibility = View.INVISIBLE
                 }
             }
-            result.cbPlayer2.setOnCheckedChangeListener { _, isChecked ->
+            this.cbPlayer2.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) {
-                    result.cbPlayer3.isChecked = false
-                    result.cbPlayer1.isChecked = false
-                    result.imPlay.visibility = View.VISIBLE
+                    this.cbPlayer3.isChecked = false
+                    this.cbPlayer1.isChecked = false
+                    this.imPlay.visibility = View.VISIBLE
                 } else {
-                    result.imPlay.visibility = View.INVISIBLE
+                    this.imPlay.visibility = View.INVISIBLE
                 }
             }
-            result.cbPlayer3.setOnCheckedChangeListener { _, isChecked ->
+            this.cbPlayer3.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) {
-                    result.cbPlayer1.isChecked = false
-                    result.cbPlayer2.isChecked = false
-                    result.imAvatar.visibility = View.VISIBLE
+                    this.cbPlayer1.isChecked = false
+                    this.cbPlayer2.isChecked = false
+                    this.imAvatar.visibility = View.VISIBLE
                 } else {
-                    result.imPlay.visibility = View.INVISIBLE
+                    this.imPlay.visibility = View.INVISIBLE
                 }
             }
         }
@@ -93,23 +93,22 @@ class MainActivity : AppCompatActivity() {
 
 
         private fun setOnClick() {
-            binding?.let { result ->
-                result.imPlay.setOnClickListener {
+            binding?.apply  {
+                this.imPlay.setOnClickListener {
                     timer.start()
-                    result.seekbar1.isEnabled = false
-                    result.seekbar2.isEnabled = false
-                    result.seekbar3.isEnabled = false
+                    this.seekbar1.isEnabled = false
+                    this.seekbar2.isEnabled = false
+                    this.seekbar3.isEnabled = false
                     enableCheckbox(false)
                 }
             }
         }
 
         private fun setZeroProgress() {
-            binding?.let { result ->
-                result.seekbar1.progress = 0
-                result.seekbar2.progress = 0
-                result.seekbar3.progress = 0
+            binding?.apply {
+                this.seekbar1.progress = 0
+                this.seekbar2.progress = 0
+                this.seekbar3.progress = 0
             }
         }
     }
-
