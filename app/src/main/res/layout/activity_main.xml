@@ -38,7 +38,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/play1"
+            android:id="@+id/imPlay"
             android:layout_width="100dp"
             android:layout_height="80dp"
             android:layout_marginTop="15dp"
@@ -49,11 +49,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
-            android:id="@+id/checkbox1"
+            android:id="@+id/cbPlayer1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="90dp"
-            app:layout_constraintBottom_toTopOf="@+id/checkbox2"
+            app:layout_constraintBottom_toTopOf="@+id/cbPlayer2"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
 
@@ -62,17 +62,17 @@
 
         <CheckBox
 
-            android:id="@+id/checkbox2"
+            android:id="@+id/cbPlayer2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/checkbox3"
-            app:layout_constraintLeft_toLeftOf="@+id/checkbox1"
-            app:layout_constraintTop_toBottomOf="@+id/checkbox1"
+            app:layout_constraintBottom_toTopOf="@+id/cbPlayer3"
+            app:layout_constraintLeft_toLeftOf="@+id/cbPlayer1"
+            app:layout_constraintTop_toBottomOf="@+id/cbPlayer1"
 
             />
 
         <CheckBox
-            android:id="@+id/checkbox3"
+            android:id="@+id/cbPlayer3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -87,9 +87,9 @@
             android:layout_marginStart="40dp"
             android:progressTint="#518EF6"
             android:thumb="@drawable/tiger"
-            app:layout_constraintBottom_toBottomOf="@+id/checkbox1"
-            app:layout_constraintLeft_toRightOf="@+id/checkbox1"
-            app:layout_constraintTop_toTopOf="@+id/checkbox1" />
+            app:layout_constraintBottom_toBottomOf="@+id/cbPlayer1"
+            app:layout_constraintLeft_toRightOf="@+id/cbPlayer1"
+            app:layout_constraintTop_toTopOf="@+id/cbPlayer1" />
 
         <SeekBar
             android:id="@+id/seekbar2"
@@ -98,9 +98,9 @@
             android:layout_marginStart="40dp"
             android:progressTint="#518EF6"
             android:thumb="@drawable/animal"
-            app:layout_constraintBottom_toBottomOf="@+id/checkbox2"
-            app:layout_constraintLeft_toRightOf="@+id/checkbox2"
-            app:layout_constraintTop_toTopOf="@+id/checkbox2"
+            app:layout_constraintBottom_toBottomOf="@+id/cbPlayer2"
+            app:layout_constraintLeft_toRightOf="@+id/cbPlayer2"
+            app:layout_constraintTop_toTopOf="@+id/cbPlayer2"
 
             />
 
@@ -111,9 +111,9 @@
             android:layout_marginStart="40dp"
             android:progressTint="#518EF6"
             android:thumb="@drawable/ckik"
-            app:layout_constraintBottom_toBottomOf="@+id/checkbox3"
-            app:layout_constraintLeft_toRightOf="@+id/checkbox3"
-            app:layout_constraintTop_toTopOf="@+id/checkbox3"
+            app:layout_constraintBottom_toBottomOf="@+id/cbPlayer3"
+            app:layout_constraintLeft_toRightOf="@+id/cbPlayer3"
+            app:layout_constraintTop_toTopOf="@+id/cbPlayer3"
 
             />
 
