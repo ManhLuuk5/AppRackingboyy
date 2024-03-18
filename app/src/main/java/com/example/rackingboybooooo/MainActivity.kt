@@ -15,10 +15,10 @@ class MainActivity : AppCompatActivity() {
     private var timer: CountDownTimer = object : CountDownTimer(MAX_TIME_RUNNING, STEP_RUNNING) {
         override fun onTick(millisUntilFinished: Long) {
             binding?.apply {
-                this.seekbar1.progress += (0..5).random()
-                this.seekbar2.progress += (0..5).random()
-                this.seekbar3.progress += (0..5).random()
-                this.imAvatar.visibility = View.VISIBLE
+                seekbar1.progress += (0..5).random()
+                seekbar2.progress += (0..5).random()
+                seekbar3.progress += (0..5).random()
+                imAvatar.visibility = View.VISIBLE
                 if (this.seekbar1.progress >= this.seekbar1.max) {
                     showToastAndCancel("Winner 1")
                 } else if (this.seekbar2.progress >= this.seekbar2.max) {
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 if (this.cbPlayer2.isEnabled) {
                     setZeroProgress()
-                } else this.imPlay.visibility = View.INVISIBLE
+                } else imPlay.visibility = View.INVISIBLE
             }
         }
 
@@ -53,39 +53,39 @@ class MainActivity : AppCompatActivity() {
 
     private fun enableCheckbox(isEnable: Boolean) {
         binding?.apply {
-            this.cbPlayer1.isEnabled = isEnable
-            this.cbPlayer2.isEnabled = isEnable
-            this.cbPlayer3.isEnabled = isEnable
+            cbPlayer1.isEnabled = isEnable
+            cbPlayer2.isEnabled = isEnable
+            cbPlayer3.isEnabled = isEnable
         }
     }
 
     private fun onCheckedChangeListener() {
         binding?.apply {
-            this.cbPlayer1.setOnCheckedChangeListener { _, isChecked ->
+            cbPlayer1.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) {
-                    this.cbPlayer2.isChecked = false
-                    this.cbPlayer3.isChecked = false
-                    this.imPlay.visibility = View.VISIBLE
+                    cbPlayer2.isChecked = false
+                    cbPlayer3.isChecked = false
+                    imPlay.visibility = View.VISIBLE
                 } else {
-                    this.imPlay.visibility = View.INVISIBLE
+                    imPlay.visibility = View.INVISIBLE
                 }
             }
-            this.cbPlayer2.setOnCheckedChangeListener { _, isChecked ->
+            cbPlayer2.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) {
-                    this.cbPlayer3.isChecked = false
-                    this.cbPlayer1.isChecked = false
-                    this.imPlay.visibility = View.VISIBLE
+                    cbPlayer3.isChecked = false
+                    cbPlayer1.isChecked = false
+                    imPlay.visibility = View.VISIBLE
                 } else {
-                    this.imPlay.visibility = View.INVISIBLE
+                    imPlay.visibility = View.INVISIBLE
                 }
             }
-            this.cbPlayer3.setOnCheckedChangeListener { _, isChecked ->
+            cbPlayer3.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) {
-                    this.cbPlayer1.isChecked = false
-                    this.cbPlayer2.isChecked = false
-                    this.imAvatar.visibility = View.VISIBLE
+                    cbPlayer1.isChecked = false
+                    cbPlayer2.isChecked = false
+                    imAvatar.visibility = View.VISIBLE
                 } else {
-                    this.imPlay.visibility = View.INVISIBLE
+                    imPlay.visibility = View.INVISIBLE
                 }
             }
         }
@@ -94,11 +94,11 @@ class MainActivity : AppCompatActivity() {
 
         private fun setOnClick() {
             binding?.apply  {
-                this.imPlay.setOnClickListener {
+                imPlay.setOnClickListener {
                     timer.start()
-                    this.seekbar1.isEnabled = false
-                    this.seekbar2.isEnabled = false
-                    this.seekbar3.isEnabled = false
+                    seekbar1.isEnabled = false
+                    seekbar2.isEnabled = false
+                    seekbar3.isEnabled = false
                     enableCheckbox(false)
                 }
             }
@@ -106,9 +106,9 @@ class MainActivity : AppCompatActivity() {
 
         private fun setZeroProgress() {
             binding?.apply {
-                this.seekbar1.progress = 0
-                this.seekbar2.progress = 0
-                this.seekbar3.progress = 0
+                seekbar1.progress = 0
+                seekbar2.progress = 0
+                seekbar3.progress = 0
             }
         }
     }
