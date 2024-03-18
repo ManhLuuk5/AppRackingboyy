@@ -15,20 +15,18 @@ class MainActivity : AppCompatActivity() {
     private var timer: CountDownTimer = object : CountDownTimer(MAX_TIME_RUNNING, STEP_RUNNING) {
         override fun onTick(millisUntilFinished: Long) {
             if (binding != null) {
-                var checkNull = binding!!
-                checkNull.seekbar1.progress += (0..5).random()
-                checkNull.seekbar2.progress += (0..5).random()
-                checkNull.seekbar3.progress += (0..5).random()
-                checkNull.imAvatar.visibility = View.VISIBLE
-                if ((binding?.seekbar1?.progress ?: 0) >= (binding?.seekbar1?.max ?: 0)) {
+                binding!!.seekbar1.progress += (0..5).random()
+                binding!!.seekbar2.progress += (0..5).random()
+                binding!!.seekbar3.progress += (0..5).random()
+                binding!!.imAvatar.visibility = View.VISIBLE
+                if (binding!!.seekbar1.progress>= binding!!.seekbar1.max) {
                     showToastAndCancel("Winner 1")
-                } else if ((binding?.seekbar2?.progress ?: 0) >= (binding?.seekbar2?.max ?: 0)) {
+                } else if (binding!!.seekbar2.progress >= binding!!.seekbar2.max) {
                     showToastAndCancel("Winner 2")
-                } else if ((binding?.seekbar3?.progress ?: 0) >= (binding?.seekbar3?.max ?: 0)) {
+                } else if (binding!!.seekbar3.progress >= binding!!.seekbar3.max) {
                     showToastAndCancel("Winner 3")
                 }
-
-                if (binding?.cbPlayer2?.isEnabled == true) {
+                if (binding!!.cbPlayer2.isEnabled) {
                     setZeroProgress()
                 } else binding?.imPlay?.visibility = View.INVISIBLE
             }
